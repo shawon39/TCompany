@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BioInformatics Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      background-image: url("geeks.jpg");
+      overflow-x: hidden;
+    }
+
+    .fluid-container {
+      background-color: #8fa0bc;
+      color: #ddd;
+    }
+
+    h1 {
+      font-size: 25px;
+      padding: 10px;
+      margin: 20px auto;
+    }
+
+    .container {
+      margin: 20px auto;
+    }
+
+    .well {
+      background-color: #e6e8de;
+    }
+
+    label {
+      color: #3b7041;
+    }
+
+    #btn1,
+    #btn2,
+    #btn3 {
+      margin: 5px;
+    }
+
+    div textarea {
+      background-color: red;
+    }
+
+    #footer {
+      padding: 20px 0;
+      background-color: #726d67;
+      color: #E6E8DE;
+    }
+
+    @media only screen and (min-width: 720px) {
+      .well {
+        padding: 20px 100px;
+      }
+      h1 {
+        font-size: 40px;
+        margin: -20px;
+      }
+
+      .heading {
+        margin: 50px;
+        padding: 50px;
+        background-color: #8fa0bc;
+        color: #ddd;
+        font-family: fantasy;
+        letter-spacing: 10px;
+      }
+    }
+      @media only screen and (max-width: 660px) {
+        h3 {
+          font-size: 20px;
+        }
+      }
+  </style>
+
+  <script>
+
+    $(document).ready(function() {
+
+      $("#btn1").click(function() {
+        $("#comment").val("");
+        $("#comment2").val("");
+      });
+      $("#btn2").click(function() {
+        $("#comment3").val("");
+        $("#comment4").val("");
+      });
+      $("#btn3").click(function() {
+        $("#comment5").val("");
+        $("#comment6").val("");
+      });
+
+    });
+
+    function myFunction() {
+      var ch = document.getElementById("comment").value;
+      var check = 0,
+        A = 0,
+        C = 0,
+        G = 0,
+        T = 0;
+
+      for (var i = 0; i < ch.length; i++) {
+
+        if (ch.charCodeAt(i)==32 || ch.charCodeAt(i)==10 || ch.charCodeAt(i)==13 ) continue;
+
+        if (ch[i] > 'Z' || ch[i] < 'A' || (ch[i] != 'A' && ch[i] != 'C' && ch[i] != 'G' && ch[i] != 'T')) {
+          document.getElementById("comment2").value = "This is Not a Valid Sequence! (-_-)";
+          check = 1;
+        }
+
+        if (ch[i] == 'A') A++;
+        else if (ch[i] == 'C') C++;
+        else if (ch[i] == 'G') G++;
+        else if (ch[i] == 'T') T++;
+      }
+      if (check != 1) {
+        if (ch != 0) document.getElementById("comment2").value = ("A = " + A + "\nC = " + C + "\nG = " + G + "\nT = " + T);
+        else alert("Sir! Apni Mone hoy Input Dite Vule gechen :-p");
+      }
+    }
+
+    //--------------------------------------------------------------------------------
+
+    function myFunction2() {
+      var ch = document.getElementById("comment3").value;
+      var ch2 = "";
+      var check = 0;
+
+      for (var i = 0; i < ch.length; i++) {
+
+        if (ch.charCodeAt(i)==32 || ch.charCodeAt(i)==10 || ch.charCodeAt(i)==13 ) continue;
+
+        if (ch[i] > 'Z' || ch[i] < 'A' || (ch[i] != 'A' && ch[i] != 'C' && ch[i] != 'G' && ch[i] != 'T')) {
+          document.getElementById("comment4").value = "This is Not a Valid Sequence! (-_-)";
+          check = 1;
+        }
+
+        if (ch[i] == 'T') ch2 += 'U';
+        else ch2 += ch[i];
+      }
+      if (check != 1) {
+        if (ch != 0) document.getElementById("comment4").value = ch2;
+        else alert("Sir! Apni Mone hoy Input Dite Vule gechen :-p");
+      }
+    }
+
+    //--------------------------------------------------------------------------------
+
+    function myFunction3() {
+      var ch = document.getElementById("comment5").value;
+      var ch2 = "";
+      var check = 0;
+
+      for (var i = 0; i < ch.length; i++) {
+
+        if (ch.charCodeAt(i)==32 || ch.charCodeAt(i)==10 || ch.charCodeAt(i)==13 ) continue;
+
+        if (ch[i] > 'Z' || ch[i] < 'A' || (ch[i] != 'A' && ch[i] != 'C' && ch[i] != 'G' && ch[i] != 'T')) {
+          document.getElementById("comment6").value = "This is Not a Valid Sequence! (-_-)";
+          check = 1;
+        }
+
+        if (ch[i] == 'A') ch2 += 'T';
+        else if (ch[i] == 'T') ch2 += 'A';
+        else if (ch[i] == 'C') ch2 += 'G';
+        else if (ch[i] == 'G') ch2 += 'C';
+      }
+      if (check != 1) {
+        ch2 = ch2.split("").reverse().join('');
+        if (ch != 0) document.getElementById("comment6").value = ch2;
+        else alert("Sir! Apni Mone hoy Input Dite Vule gechen :-p");
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div class="fluid-container heading text-center">
+    <h1> BIOINFORMATICS </h1>
+  </div>
+
+  <div class="container text-center">
+    <div class="well">
+      <h3 style="color:#3f649b">Counting all the DNA Neucliotides</h3>
+      <br>
+
+      <!---------------------------------------------------------------------->
+
+      <div class="form-group">
+
+        <textarea placeholder="Enter The Sequence..." class="form-control" rows="2" id="comment"></textarea>
+      </div>
+
+      <div class="form-group">
+
+        <textarea placeholder="Expected Output..." class="form-control" rows="5" id="comment2"></textarea>
+      </div>
+
+      <button class="btn btn-success" onclick="myFunction()">Output</button>
+      <button class="btn btn-primary" id="btn1"> Reset </button>
+
+
+    </div>
+  </div>
+
+  <!---------------------------------------------------------------------->
+  <div class="container text-center">
+    <div class="well">
+      <h3 style="color:#3f649b" onloadedmetadata="">Transcribing DNA into RNA</h3>
+      <br>
+
+      <div class="form-group">
+
+        <textarea placeholder="Enter The Sequence..." class="form-control" rows="2" id="comment3"></textarea>
+      </div>
+
+      <div class="form-group">
+
+        <textarea placeholder="Expected Output..." class="form-control" rows="5" id="comment4"></textarea>
+      </div>
+
+      <button class="btn btn-success" onclick="myFunction2()">Output</button>
+      <button class="btn btn-primary" id="btn2"> Reset </button>
+
+    </div>
+  </div>
+
+  <!---------------------------------------------------------------------->
+  <div class="container text-center">
+    <div class="well">
+      <h3 style="color:#3f649b">Complementing DNA Strand to an RNA Strand</h3>
+      <br>
+
+      <div class="form-group">
+
+        <textarea placeholder="Enter The Sequence..." class="form-control" rows="2" id="comment5"></textarea>
+      </div>
+
+      <div class="form-group">
+
+        <textarea placeholder="Expected Output..." class="form-control" rows="5" id="comment6"></textarea>
+      </div>
+
+      <button class="btn btn-success" onclick="myFunction3()">Output</button>
+      <button class="btn btn-primary" id="btn3"> Reset </button>
+
+      <!---------------------------------------------------------------------->
+
+    </div>
+  </div>
+
+  <div class="fluid-container">
+    <footer>
+      <p class="text-center" id="footer">Developed by : <b>Shakhawat Shawon</b></p>
+    </footer>
+  </div>
+
+</body>
+
+</html>
