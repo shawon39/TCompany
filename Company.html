@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, 'Geneva', sans-serif;
+    }
+
+    @font-face {
+      font-family: Geneva;
+      src: url(Geneva_0.TTF);
+    }
+
+    .navbar,
+    .navbar-toggle {
+      background-color: #F4511E;
+      border: none;
+      outline: none;
+      border-radius: 0px;
+    }
+
+    .navbar-toggle {
+      border-radius: 4px;
+    }
+
+    .navbar-brand,
+    .navbar-right>li>a {
+      color: #FFFFFF !important;
+      letter-spacing: 4px;
+    }
+
+    .navbar-right>li {
+      font-size: 12px;
+    }
+
+    .navbar-right>li>a:hover {
+      background-color: #FFFFFF !important;
+      color: #F4511E !important;
+    }
+
+    .head.text-center {
+      margin-top: -20px;
+      padding: 50px 0px 80px 0px;
+      color: #FFFFFF;
+      background-color: #F4511E;
+    }
+
+    .headContent1 {
+      padding-bottom: 10px;
+      font-size: 60px;
+      letter-spacing: 5px;
+    }
+
+    .headContent2 {
+      padding-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .headContent3 {
+      padding-bottom: 10px;
+    }
+
+
+    #email {
+      width: 500px;
+    }
+
+    .centering {
+      margin-top: 2px;
+    }
+
+    hr {
+      border: 0;
+      clear: both;
+      display: block;
+      width: 96%;
+      background-color: #DDDDDD;
+      height: 1px;
+    }
+
+    .logo {
+      font-size: 200px;
+      color: #f4511e;
+    }
+
+    .body2 {
+      padding: 80px 50px 50px 40px;
+    }
+
+    .btn-default {
+      height: 45px;
+      width: 120px;
+    }
+
+    .logo-small {
+      font-size: 50px;
+      color: #f4511e;
+    }
+
+    .service {
+      padding: 40px;
+    }
+
+    #servicehear {
+      padding: 10px;
+    }
+
+    .servicehear {
+      padding-top: 40px;
+    }
+
+    .service p {
+      padding-bottom: 60px;
+    }
+
+    .service h4 {
+      padding-bottom: 30px;
+    }
+
+    .protfol {
+      background-color: #FFFFFF;
+      padding: 10px;
+      margin: 20px 10px;
+    }
+
+    .protfol2 {
+      border: 1px solid #F4511E;
+      padding-bottom: 40px;
+    }
+
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right {
+      color: #F4511E;
+    }
+
+    .left.carousel-control,
+    .right.carousel-control {
+      background-image: none;
+    }
+
+    #myCarousel {
+      background-color: #F6F6F6;
+    }
+
+    #myCarousel>ol>li {
+      border-color: #F4511E;
+    }
+
+    .carousel-indicators li.active {
+      background-color: #f4511e;
+    }
+
+    .navbar-right>li.active>a {
+      color: #F4511E !important;
+    }
+
+    .protfol2 h1:first-child {
+      background-color: #f4511e;
+      padding: 40px;
+      color: white;
+      margin: 0;
+    }
+
+    .protfol2 p {
+      padding-top: 15px;
+      color: #818181;
+    }
+
+    .col-sm-5 p {
+      padding: 5px;
+      color: #818181;
+      opacity: .8;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+
+    .thumbnail {
+      border: none;
+      border-radius: 0;
+    }
+
+    .protfol {
+      background-color: #F6F6F6;
+    }
+
+    @media only screen and (min-width: 868px) {
+      .extraPadding {
+        padding: 0 100px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      #email {
+        width: 300px;
+        display: inline;
+      }
+      .centering {
+        margin-bottom: 3px;
+      }
+    }
+
+    @media only screen and (max-width: 670px) {
+
+      #email {
+        width: 280px;
+      }
+      .centering {
+        margin-bottom: 3px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+
+      #email {
+        width: 230px;
+        margin-left: -80px;
+      }
+      .centering {
+        margin-right: -80px;
+        margin-bottom: 3px;
+      }
+      .headContent1 {
+        font-size: 50px;
+      }
+    }
+
+    @media only screen and (max-width: 335px) {
+
+      #email {
+        width: 150px;
+      }
+      .headContent1 {
+        font-size: 40px;
+      }
+      .navbar-nav {
+        margin-top: 0;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <!-------------------------------------------------------------->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid extraPadding">
+      <div class="navbar-header">
+        <button type="button" class="hamburger navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#service">SERVICES</a></li>
+          <li><a href="#protfolio">PORTFOLIO</a></li>
+          <li><a href="#pricing">PRICING</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-------------------------------------------------------------->
+  <div class="head text-center" style="margin-top:50px" id="top">
+    <div id="myId1">
+      <h1 class="headContent1"> Company </h1>
+      <h4 class="headContent2"> We specialize in blablabla </h4>
+      <form class="form-inline textCenter">
+        <div class="form-group headContent3">
+          <label <span class="sr-only"> for="email"></span>Email address:</label>
+          <input type="email" class="form-control" placeholder="Enter Address" id="email">
+          <button type="submit" class="btn btn-danger centering" style="margin-left:-5px;">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-------------------------------------------------------------->
+  <div class="fluid-container body2" id="about">
+    <div class="row">
+      <div class="col-sm-8" style="padding: 0 20px;">
+        <h3 style="padding-bottom:50px;">ABOUT COMPANY PAGE</h3>
+        <h4 style="padding-bottom:40px;font-family: sans-serif;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+       </h4>
+        <p style="padding-bottom:30px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <button class="btn btn-default">Get In Touch</button>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-signal logo"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="fluid-container body2" style="background-color:#F6F6F6">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-globe logo"></span>
+      </div>
+      <div class="col-sm-8" style="padding: 0 20px;">
+        <h3 style="padding-bottom:50px;"><strong>OUR VALUES</strong></h3>
+        <h4 style="padding-bottom:40px;font-family: sans-serif;"><strong> MISSION:</strong> Our mission lorem ipsum dolor sit amet,
+           consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+       </h4>
+        <p style="padding-bottom:30px;"><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="container-fluid text-center" style="padding-top:50px;" id="service">
+
+    <h3 id="servicehear"> SERVICES </h3>
+    <h4 id="servicehear"> What we offer </h4>
+
+    <div class="row">
+      <div class="col-sm-4 service">
+        <div class="sec1">
+          <span class="glyphicon glyphicon-off logo-small"></span>
+          <h4>Power</h3>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </div>
+      <div class="sec2">
+        <span class="glyphicon glyphicon-leaf logo-small"></span>
+        <h4>Green</h4>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </div>
+      </div>
+      <div class="col-sm-4 service">
+        <div class="sec1">
+          <span class="glyphicon glyphicon-heart logo-small"></span>
+          <h4>Love</h4>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </div>
+        <div class="sec2">
+          <span class="glyphicon glyphicon-certificate logo-small"></span>
+          <h4>CERTIFIED</h4>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </div>
+      </div>
+      <div class="col-sm-4 service">
+        <div class="sec1">
+          <span class="glyphicon glyphicon-lock logo-small"></span>
+          <h4>JOB DONE</h4>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </div>
+        <div class="sec2">
+          <span class="glyphicon glyphicon-wrench logo-small"></span>
+          <h4>HARD WORD</h4>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="container-fluid text-center" style="background-color: #F6F6F6;" id="protfolio">
+
+    <h3 style="padding: 50px 0;"> PORTFOLIO </h3>
+    <h4 style="padding-bottom: 20px;"> What we have created </h4>
+
+    <div class="row" style="margin: 0 10px;">
+      <div class="col-sm-4 ">
+        <div class="protfol">
+          <div class="thumbnail">
+            <img src="img/paris.jpg" alt="paris" width="100%" height="300">
+            <div class="caption">
+              <p><strong>Paris</strong></p>
+              <p>Yes, we built Paris</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="protfol">
+          <div class="thumbnail">
+            <img src="img/newyork.jpg" alt="New York" width="100%" height="300">
+            <div class="caption">
+              <p><strong>New York</strong></p>
+              <p>We built New York</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="protfol">
+          <div class="thumbnail">
+            <img src="img/sanfran.jpg" alt="San Francisco" width="100%" height="300">
+            <div class="caption">
+              <p><strong>San Francisco</strong></p>
+              <p>Yes, San Fran is ours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 style="padding-top:50px;"><strong>WHAT OUR CUSTOMERS SAY </strong></h3>
+
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="container-fliud">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <p class="text-center" style="height:250px;  padding-top:125px;">
+            <strong>  "This company is the best. I am so happy with the result!" <br> Michael Roe, Vice President, Comment Box</strong>
+          </p>
+        </div>
+
+        <div class="item">
+          <p class="text-center" style="height:250px; padding-top:125px;">
+            <strong>"One word... WOW!!" <br> John Doe, Salesman, Rep Inc</strong>
+          </p>
+        </div>
+
+        <div class="item">
+          <p class="text-center" style="height:250px;  padding-top:125px;"><strong>
+            "Could I... BE any more happy with this company?"<br> Chandler Bing, Actor, FriendsAlot
+          </strong></p>
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="container-fluid text-center" style="margin-bottom:70px;" id="pricing">
+
+    <h3 style="padding-top:50px;"><strong>PRICING </strong></h3>
+    <h4 style="padding:20px;"> Choose a payment plan that works for you</h4>
+
+    <div class="row" style="margin: 0 10px;">
+
+      <div class="col-sm-4">
+        <div class="protfol2">
+          <h1>Basic</h1>
+          <p><strong>
+              20 Lorem <br><br>
+              15 Ipsum <br><br>
+              5 Dolor <br> <br>
+              2 Sit <br><br>
+              Endless Amet</strong>
+          </p>
+          <hr>
+          <h1 style="color:#818181;">$19</h1>
+          <p>per month</p><br>
+          <button class="btn btn-default">Sign Up</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="protfol2">
+          <h1>Pro</h1>
+          <p><strong>
+              50 Lorem <br> <br>
+              25 Ipsum <br> <br>
+              10 Dolor <br> <br>
+              5 Sit <br> <br>
+              Endless Amet</strong>
+          </p>
+          <hr>
+          <h1 style="color:#818181;">$29</h1>
+          <p>per month</p> <br>
+          <button class="btn btn-default">Sign Up</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="protfol2">
+          <h1>Premium</h1>
+          <p><strong>
+              100 Lorem <br> <br>
+              50 Ipsum <br> <br>
+              25 Dolor <br> <br>
+              10 Sit <br> <br>
+              Endless Amet</strong>
+          </p>
+          <hr>
+          <h1 style="color:#818181;">$49</h1>
+          <p>per month</p> <br>
+          <button class="btn btn-default">Sign Up</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="container-fluid" style="background-color:#F6F6F6;" id="contact">
+
+    <h3 class="text-center" style="padding: 50px 0 0 0;">CONTACT</h3>
+
+    <div class="row" style="padding:40px;">
+      <div class="col-sm-5">
+        <p>Contact us and we'll get back to you within 24 hours.</p>
+        <p>Chicago, US</p>
+        <p>+00 1515151515</p>
+        <p>myemail@something.com</p>
+      </div>
+
+      <div class="col-sm-7">
+        <form class="contactWith">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="sr-only"> for="usr">Name:</label>
+                <input type="text" placeholder="Name" class="form-control" id="usr">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="sr-only"> for="pwd">Password:</label>
+                <input type="password" placeholder="Email" class="form-control" id="pwd">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="sr-only"> for="comment">Comment:</label>
+                <textarea class="form-control" rows="5" placeholder="Comment" id="comment"></textarea>
+              </div>
+            </div>
+          </div>
+          <button style="float:right; height: 35px; width:100px;" type="button" class="btn btn-default">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-------------------------------------------------------------->
+
+  <div class="container-fluid">
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {
+          lat: -25.363,
+          lng: 131.044
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5GBw7U-BAxC3FX_P08YTx6EAb4z9tC8Y&callback=initMap">
+    </script>
+
+  </div>
+
+  <!-------------------------------------------------------------->
+
+  <div class="container-fluid text-center" style="padding:70px;">
+    <li style="list-style-type: none;"><a href="#top"><span style="color:#F4511E; font-size:20px; padding-bottom:15px;" class="glyphicon glyphicon-chevron-up"></span> </a>
+      <h5> Bootstrap Theme Made By: <strong>Shakhawat Shawon</strong></h5>
+  </div>
+
+  <script>
+    window.sr = ScrollReveal();
+
+    sr.reveal('.logo', {
+      duration: 2000,
+      origin: 'bottom',
+      distance: '100px',
+      viewFactor: 0.1
+    });
+
+    sr.reveal('.sec1', {
+      duration: 2000,
+      origin: 'bottom',
+      distance: '100px',
+      viewFactor: 0.1
+    });
+
+    sr.reveal('.sec2', {
+      duration: 2000,
+      origin: 'bottom',
+      distance: '100px',
+      viewFactor: 0.1
+    });
+    sr.reveal('.thumbnail', {
+      duration: 2000,
+      origin: 'bottom',
+      distance: '100px',
+      viewFactor: 0.1
+    });
+
+    sr.reveal('.protfol2', {
+      duration: 2000,
+      origin: 'bottom',
+      distance: '100px',
+      viewFactor: 0.1
+    });
+
+    sr.reveal('.contactWith', {
+      duration: 2000,
+      origin: 'bottom',
+      distance: '300px',
+      viewFactor: 0.1
+    });
+
+  </script>
+
+
+  <script>
+    $(document).ready(function() {
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 1000, function() {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+
+</body>
+
+</html>
